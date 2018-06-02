@@ -1,0 +1,60 @@
+{
+  "snakeEyes":{
+    "picture": "../img/joe/snake-eyes.jpg",
+    "faction": "G.I. Joe",
+    "sex": "Male",
+    "height": "6'0\"",
+    "weight": 200,
+    "name": "Snake-Eyes", 
+    "grade": "E-5",   
+    "birthplace": "Unknown",
+    "primary": "Infantry",
+    "secondary": "Hand-to-Hand Combat Instructor",
+    "current": "Martial Arts School, Ninja Warrior",
+    "bio": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi laborum eligendi veniam dolore molestiae repudiandae quisquam animi at. Nemo dolores est nobis fugiat molestiae, vitae consequuntur impedit voluptatum nam similique aliquam voluptas cupiditate! Dolorum, consequuntur pariatur numquam rem quae iure ex saepe ullam, debitis dolor delectus? Hic nam aut sunt. "
+  },
+  "outback":{
+    "picture": "../img/joe/outback.jpg",
+    "faction": "G.I. Joe",
+    "sex": "Male",
+    "height": "5'10\"",
+    "weight": 210,
+    "name": "Stuart R. Selkirk", 
+    "grade": "E-5",   
+    "birthplace": "Big Piney, WY",
+    "primary": "Infantry",
+    "secondary": "Survival Training Instructor",
+    "current": "Classified",
+    "bio": "Outback has been climbing mountains since he was a kid. He's jumped vaines, rapelled down ice-covered peaks, and scaled cliff faces that would give professional climbers the chills. "
+  },
+  "cobraCommander":{
+    "picture": "../img/cobra/cobra-commander.jpg",
+    "faction": "Cobra",
+    "sex": "Male",
+    "height": "5'9\"",
+    "weight": 185,
+    "name": "Rexford G. \"Rex\" Lewis", 
+    "grade": "Commander/Supreme Leader",   
+    "birthplace": "Classified",
+    "primary": "Intelligence",
+    "secondary": "Ordinance (Experimental Weaponry)",
+    "current": "Classified",
+    "bio": "Cobra Commander will do anything to rule the world. "
+  },
+  "destro":{
+    "picture": "../img/cobra/destro.png",
+    "faction": "Cobra",
+    "sex": "Male",
+    "height": "6'2\"",
+    "weight": 220,
+    "name": "James McCullen destro XXIV", 
+    "grade": "N/A",   
+    "birthplace": "Callander, Scotland",
+    "primary": "Weapons Manufacturer",
+    "secondary": "Terrorist",
+    "current": "Classified",
+    "bio": " The Destro clan has designed and sold weapons for centuries, and Destro is the faceless power behind their current incarnation—M.A.R.S. (Military Armament Research Syndicate), a state-of-the-art weapons manufacturer and one of the largest multinational corporations in the world."
+  }
+
+
+}
