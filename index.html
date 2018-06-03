@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Stardos+Stencil:700" rel="stylesheet">
   <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -24,10 +25,10 @@
             <div class="dropdown-menu" aria-labelledby="download">
 
               <a class="dropdown-item soldier-name" href="#">Snake-Eyes</a>
-              <div class="dropdown-divider"></div>
+             
 
               <a class="dropdown-item soldier-name" href="#">Outback</a>
-              <div class="dropdown-divider"></div>
+              <!-- <div class="dropdown-divider"></div> -->
  
             </div>
           </li>
@@ -39,11 +40,11 @@
             <div class="dropdown-menu" aria-labelledby="download">
 
               <a class="dropdown-item soldier-name" href="#">Cobra Commander</a>
-              <div class="dropdown-divider"></div>
+          
 
               <a class="dropdown-item soldier-name" href="#">Destro</a>
-              <div class="dropdown-divider"></div>
- 
+           
+
             </div>
           </li>
         </ul>
@@ -62,18 +63,52 @@
   </div>
 
 
+    <div class="overlay"></div>
+      <img class="hoverImage" src="" alt="">
+
+
 
   <div class="container searchContainer text-center">
-    <div class="search card-body">
-
-  
-    </div>
+    <div class="search card-body"></div>
     <br>
-
   </div>
   
-  <div id="output" class="dog-output"></div>
-  <div id="profile" class="dog-output"></div>
+  <!-- <div id="output" class="soldier-output"></div> -->
+  <!-- <div id="profile" class="soldier-output"></div> -->
+
+
+  <div class="card nav-buttons">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item nav-item-options" onclick="changeToProfile()">
+            <div class="nav-link nav-panel active">Profile</div>
+        </li>
+        <li class="nav-item nav-item-options" onclick="changeToToys()">
+            <div class="nav-link nav-panel">Toys</div>
+        </li>
+        <li class="nav-item nav-item-options" onclick="changeToGallery()">
+            <div class="nav-link nav-panel">Gallery</div>
+        </li>
+      </ul>
+    </div>
+    <!-- <div class="card-body">
+        <h4 class="card-title card-name">sdfs</h4>
+
+       
+
+ 
+    </div> -->
+</div>
+
+<div class="go-profile">
+  <div id="profile" class="soldier-output"></div>
+</div>
+<div class="go-toys">
+  <div id="toys"></div>
+</div>
+<div class="go-gallery">
+ ga
+</div>
 
 
 

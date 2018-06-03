@@ -37,3 +37,60 @@ body {
 margin-left: 2rem;
 font-size: 1rem;
 }
+
+
+.hoverImage {
+  display:none;
+  position:absolute;
+  z-index:2;
+  top: 20%;
+  left: 40%;
+  width: 100%;
+  width: 16rem;
+  height: 20rem;
+  /* background-color: blue; */
+}
+
+.overlay {
+  display:none;
+  position:fixed;
+  z-index:1;
+  background-color:rgba(32, 30, 30, 0.733);
+  width: 100vw;
+  height: 100vh;
+}
+
+
+.nav-buttons {
+  display:none;
+}
+/* 
+.go-profile {
+  display: none;
+} */
+.go-toys {
+  display:none;
+}
+.go-gallery {
+  display:none;
+}
+
+.nav-panel {
+  cursor:pointer;
+}
+
+.active {
+  background-color:#303030 !important;
+
+}
+
+.nav-tabs .nav-link {
+  border: none !important;
+}
+
+.card-header-name {
+  margin: 0 0 2rem 0;
+  font-family: 'Stardos Stencil', cursive;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}

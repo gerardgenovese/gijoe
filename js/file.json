@@ -5,13 +5,22 @@
     "sex": "Male",
     "height": "6'0\"",
     "weight": 200,
+    "codename": "Snake-Eyes",
     "name": "Snake-Eyes", 
     "grade": "E-5",   
     "birthplace": "Unknown",
     "primary": "Infantry",
     "secondary": "Hand-to-Hand Combat Instructor",
     "current": "Martial Arts School, Ninja Warrior",
-    "bio": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi laborum eligendi veniam dolore molestiae repudiandae quisquam animi at. Nemo dolores est nobis fugiat molestiae, vitae consequuntur impedit voluptatum nam similique aliquam voluptas cupiditate! Dolorum, consequuntur pariatur numquam rem quae iure ex saepe ullam, debitis dolor delectus? Hic nam aut sunt. "
+    "bio": "Snake-Eyes is a dark mysterious man with an even darker past. His movements are silent, his concentration is intense, and his tactics in battle unbeatable.",
+    "toys": {
+      "toy1": {
+        "toyPicture": "../img/toys/snake-eyes/rotc.jpg",
+        "toyTitle": "Rise of the Cobra Series",
+        "toyInfo": " (Paris Pursuit) with Gray Timber 3.75 Inch Scale",
+        "toyPrice": 24.99
+      }
+    }
   },
   "outback":{
     "picture": "../img/joe/outback.jpg",
@@ -19,6 +28,7 @@
     "sex": "Male",
     "height": "5'10\"",
     "weight": 210,
+    "codename": "Outback",
     "name": "Stuart R. Selkirk", 
     "grade": "E-5",   
     "birthplace": "Big Piney, WY",
@@ -33,6 +43,7 @@
     "sex": "Male",
     "height": "5'9\"",
     "weight": 185,
+    "codename": "Cobra Commander",
     "name": "Rexford G. \"Rex\" Lewis", 
     "grade": "Commander/Supreme Leader",   
     "birthplace": "Classified",
@@ -42,11 +53,12 @@
     "bio": "Cobra Commander will do anything to rule the world. "
   },
   "destro":{
-    "picture": "../img/cobra/destro.png",
+    "picture": "../img/cobra/destro.jpg",
     "faction": "Cobra",
     "sex": "Male",
     "height": "6'2\"",
     "weight": 220,
+    "codename": "Destro",
     "name": "James McCullen destro XXIV", 
     "grade": "N/A",   
     "birthplace": "Callander, Scotland",
