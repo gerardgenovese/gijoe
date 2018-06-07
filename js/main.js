@@ -1,6 +1,6 @@
 class Soldier {
 
-  async getUser(user) {
+  async getSoldier(soldier) {
     const profileResponse = await fetch(`js/file.json`);
 
     const profile = await profileResponse.json();
@@ -11,11 +11,21 @@ class Soldier {
   }
 }
 
+
+// if (window.matchMedia("min-width:2000px)").matches) {
+// UI.showHover();
+// } else {
+//   console.log('no');
+// }
+
 class UI {
   constructor() {
     this.soldierProfile = document.getElementById('profile');
-    this.toys = document.getElementById('toys')
+    this.toys = document.getElementById('toys');
+    this.hoverImage = document.querySelector('.hoverImage');
   }
+
+  
 
   //Display profile in UI
   showProfile(joe) {
@@ -25,9 +35,9 @@ class UI {
     <div class="card card-body mb-3">
     <h2 class="card-title text-center card-header-name">${joe.codename}</h2>
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 text-center">
           <img class="img-fluid mb-2" src="${joe.picture}">
-          <a href="${joe.html_url}" target="_blank" class="btn btn-primary btn-block mb-4">View Profile</a>
+
         </div>
         <div class="col-md-9">
           <span class="badge badge-primary">Faction: ${joe.faction}</span>
@@ -57,20 +67,50 @@ class UI {
 
   showToys(getToy) {
     this.toys.innerHTML = `
-    <div class="card"style="width:20rem">
-    <img class="card-img-top" src="${getToy.toys.toy1.toyPicture}" alt="Card image cap">
-    <div class="card-body">
+    <div class="card card-toys" style="width:20rem">
+      <img class="card-img-top" src="${getToy.toys.toy1.toyPicture}" alt="Card image cap">
+      <div class="card-body">
         <h4 class="card-title">${getToy.toys.toy1.toyTitle}</h4>
         <p class="card-text">${getToy.toys.toy1.toyInfo}.</p>
-         <a href="https://www.amazon.com/Joe-Cobra-Figure-Pursuit-Timber/dp/B002G49YAA/ref=sr_1_3?s=toys-and-games&ie=UTF8&qid=1528000273&sr=1-3&keywords=snake+eyes" class="btn btn-success btn-block" target="_blank">Buy On Amazon</a>
-    </div>
-</div>`;
+        <a href=${getToy.toys.toy1.toyAmazon} class="btn btn-success btn-block" target="_blank">Buy On Amazon</a>
+      </div>
+    </div>`;
   }
 
+  showHover(onHover) {
 
-
-
-
+    let hoverImage = document.querySelector('.hoverImage');
+    
+    hoverImage.innerHTML = `
+      <div class="container hover-container">
+      <h2 class="text-center">${onHover.name}</h2>
+        <div class="row">
+          <div class="col-lg-4">
+            <img class="hover-img" src=${onHover.picture}>
+          </div>
+          <div class="col-lg-8 mt-5 pt-5">
+            <p class="text-center"> ${onHover.hoverBio}</p>
+          </div>
+       </div>
+      </div>
+      `;
+    // let hoverImage = document.querySelector('.hoverImage');
+    
+    // hoverImage.innerHTML = `
+    //   <div class="container hover-container">
+    //   <h2 class="text-center">${onHover.name}</h2>
+    //     <div class="row">
+    //       <div class="col-lg-4">
+    //         <img class="hover-img" src=${onHover.picture}>
+    //       </div>
+    //       <div class="col-lg-8 mt-5 pt-5">
+    //         <p class="text-center"> ${onHover.hoverBio}</p>
+    //       </div>
+    //    </div>
+    //   </div>
+    //   `;
+  }
+ 
   //Show alert message
   showAlert(message, className) {
     //Clear any remaining alerts
@@ -129,7 +169,7 @@ searchSoldier.addEventListener('keyup', (e) => {
 
   if (userText !== '') {
     //Make http call
-    soldier.getUser(userText)
+    soldier.getSoldier(userText)
     .then(data => {
   
       if (userText === 'snake-eyes' || userText === 'snake eyes') {
@@ -162,6 +202,7 @@ searchSoldier.addEventListener('keyup', (e) => {
     }
   }, true);
 
+  e.preventDefault();
 });
 
 
@@ -173,34 +214,39 @@ let name = document.querySelectorAll('.soldier-name');
 //loop through and get index for name selected
 for (let i = 0; i < name.length; i++) {
   name[i].addEventListener('click', function(){
+    changeToProfile();
     let getName = name[i].textContent.toLowerCase();
 
     //show profile if clicked
     if (getName == 'snake-eyes') {
-      soldier.getUser(name)
+      soldier.getSoldier(name)
       .then(data => {
         ui.showProfile(data.profile.snakeEyes);
+        ui.showToys(data.profile.snakeEyes);
         document.getElementById('searchSoldier').value = getName;
       });
     }
     else if (getName == 'outback') {
-      soldier.getUser(name)
+      soldier.getSoldier(name)
       .then(data => {
         ui.showProfile(data.profile.outback);
+        ui.showToys(data.profile.outback);
         document.getElementById('searchSoldier').value = getName;
       });
     }
     else if (getName == 'cobra commander' || getName == 'cobra-commander') {
-      soldier.getUser(name)
+      soldier.getSoldier(name)
       .then(data => {
         ui.showProfile(data.profile.cobraCommander);
+        ui.showToys(data.profile.cobraCommander);
         document.getElementById('searchSoldier').value = getName;
       });
     }
     else if (getName == 'destro') {
-      soldier.getUser(name)
+      soldier.getSoldier(name)
       .then(data => {
         ui.showProfile(data.profile.destro);
+        ui.showToys(data.profile.destro);
         document.getElementById('searchSoldier').value = getName;
       });
     }
@@ -213,9 +259,7 @@ for (let i = 0; i < name.length; i++) {
 
 
 
-
-
-//on mouseover display small image of soldier
+// on mouseover display small image of soldier
 for (let i = 0; i < name.length; i++) {
   name[i].addEventListener('mouseover', function(){
     let getName = name[i].textContent.toLowerCase();
@@ -224,21 +268,97 @@ for (let i = 0; i < name.length; i++) {
     hoverImage.style.display = 'block';
     document.querySelector('.overlay').style.display = 'block';
 
-    //show profile if clicked
+
+    //show hover profile if clicked
     if (getName == 'snake-eyes') {
-      hoverImage.src = 'img/joe/snake-eyes.jpg';
+      soldier.getSoldier(name)
+      .then(data => {
+        ui.showHover(data.profile.snakeEyes);
+      });
     }
     else if (getName == 'outback') {
-      hoverImage.src = 'img/joe/outback.jpg';
+      soldier.getSoldier(name)
+      .then(data => {
+        ui.showHover(data.profile.outback);
+      });
     }
     else if (getName == 'cobra commander' || getName == 'cobra-commander') {
-      hoverImage.src = 'img/cobra/cobra-commander.jpg';
+      soldier.getSoldier(name)
+      .then(data => {
+        ui.showHover(data.profile.cobraCommander);
+      });
     }
     else if (getName == 'destro') {
-      hoverImage.src = 'img/cobra/destro.jpg';
+      soldier.getSoldier(name)
+      .then(data => {
+        ui.showHover(data.profile.destro);
+      });
     }
   });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//on mouseover display small image of soldier
+// for (let i = 0; i < name.length; i++) {
+//   name[i].addEventListener('mouseover', function(){
+//     let getName = name[i].textContent.toLowerCase();
+
+//     let hoverImage = document.querySelector('.hoverImage');
+//     hoverImage.style.display = 'block';
+//     document.querySelector('.overlay').style.display = 'block';
+//     // let test = document.querySelector('.test');
+//     // test.style.display = 'block';
+
+//     //show profile if clicked
+//     if (getName == 'snake-eyes') {
+//       // hoverImage.src = 'img/joe/snake-eyes.jpg';
+//       hoverImage.innerHTML = `
+//       <div class="container">
+//         <div class="row">
+//           <div class="col-md-6">
+//             <img src='img/joe/snake-eyes.jpg'>
+//           </div>
+//           <div class="col-md-6">
+//             <h2>Snake-Eyes</h2>
+//           </div>
+//         </div>
+//       </div>
+      
+//       `;
+//     }
+//     else if (getName == 'outback') {
+//       hoverImage.src = 'img/joe/outback.jpg';
+//     }
+//     else if (getName == 'cobra commander' || getName == 'cobra-commander') {
+//       hoverImage.src = 'img/cobra/cobra-commander.jpg';
+//     }
+//     else if (getName == 'destro') {
+//       hoverImage.src = 'img/cobra/destro.jpg';
+//     }
+//   });
+// }
 //on mouseout remove image of soldier
 for (let i = 0; i < name.length; i++) {
   name[i].addEventListener('mouseout', function(){
@@ -254,7 +374,7 @@ for (let i = 0; i < name.length; i++) {
 
 
 
-
+//show/hide profile/toys/gallery 
 function changeToProfile() {
   document.querySelector('.go-profile').style.display = 'block';
   document.querySelector('.go-toys').style.display = 'none';
@@ -284,15 +404,43 @@ function changeToGallery() {
 // ALLOW DIV ELEMENT TO MAINTAIN BUTTON HOVER COLOR
 function hover() {
 
-    let header = document.querySelector(".nav-buttons");
-    let btns = header.getElementsByClassName("nav-item-options");
-    for (let i = 0; i < btns.length; i++) {
-      btns[i].addEventListener("click", function() {
-        let current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
-      });
-    }
- 
+  let header = document.querySelector(".nav-buttons");
+  let btns = header.getElementsByClassName("nav-item-options");
+  for (let i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+      let current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      this.className += " active";
+    });
+  }
 };
 hover();
+
+
+function changeJoeMenuTab() {
+  let panelProfile = document.querySelector('.panel-profile');
+  let header = document.querySelector(".dropdown-menu");
+  let btns = header.getElementsByClassName("soldier-name");
+  for (let i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+      let current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      panelProfile.className += " active";
+    });
+  }
+}
+changeJoeMenuTab();
+
+function changeCobraMenuTab() {
+  let panelProfile = document.querySelector('.panel-profile');
+  let header = document.querySelector(".dropdown-menu2");
+  let btns = header.getElementsByClassName("soldier-name");
+  for (let i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function() {
+      let current = document.getElementsByClassName("active");
+      current[0].className = current[0].className.replace(" active", "");
+      panelProfile.className += " active";
+    });
+  }
+}
+changeCobraMenuTab();

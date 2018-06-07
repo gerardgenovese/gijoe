@@ -13,12 +13,14 @@
     "secondary": "Hand-to-Hand Combat Instructor",
     "current": "Martial Arts School, Ninja Warrior",
     "bio": "Snake-Eyes is a dark mysterious man with an even darker past. His movements are silent, his concentration is intense, and his tactics in battle unbeatable.",
+    "hoverBio": "Snake-Eyes is a dark mysterious man with an even darker past. His movements are silent, his concentration is intense, and his tactics in battle unbeatable.",
     "toys": {
       "toy1": {
         "toyPicture": "../img/toys/snake-eyes/rotc.jpg",
         "toyTitle": "Rise of the Cobra Series",
         "toyInfo": " (Paris Pursuit) with Gray Timber 3.75 Inch Scale",
-        "toyPrice": 24.99
+        "toyPrice": 24.99,
+        "toyAmazon": "https://www.amazon.com/Joe-Cobra-Figure-Pursuit-Timber/dp/B002G49YAA/ref=sr_1_4?s=toys-and-games&ie=UTF8&qid=1528402966&sr=1-4&keywords=snake+eyes"
       }
     }
   },
@@ -35,7 +37,17 @@
     "primary": "Infantry",
     "secondary": "Survival Training Instructor",
     "current": "Classified",
-    "bio": "Outback has been climbing mountains since he was a kid. He's jumped vaines, rapelled down ice-covered peaks, and scaled cliff faces that would give professional climbers the chills. "
+    "bio": "Outback has been climbing mountains since he was a kid. He's jumped vaines, rapelled down ice-covered peaks, and scaled cliff faces that would give professional climbers the chills.",
+    "hoverBio": "Outback has been climbing mountains since he was a kid. He's jumped vaines, rapelled down ice-covered peaks, and scaled cliff faces that would give professional climbers the chills.",
+    "toys": {
+      "toy1": {
+        "toyPicture": "../img/toys/outback/outback1.jpg",
+        "toyTitle": "Club Exclusive",
+        "toyInfo": "DTC Stuart 'Outback' 3 3/4 Inch Scale",
+        "toyPrice": 34.99,
+        "toyAmazon": "https://www.amazon.com/Joe-Exclusive-Stuart-Outback-Selkirk/dp/B00HMK93RW/ref=sr_1_3?ie=UTF8&qid=1528402588&sr=8-3&keywords=outback+gi+joe"
+      }
+    }
   },
   "cobraCommander":{
     "picture": "../img/cobra/cobra-commander.jpg",
@@ -50,7 +62,17 @@
     "primary": "Intelligence",
     "secondary": "Ordinance (Experimental Weaponry)",
     "current": "Classified",
-    "bio": "Cobra Commander will do anything to rule the world. "
+    "bio": "Cobra Commander will do anything to rule the world.",
+    "hoverBio": "Cobra Commander will do anything to rule the world.",
+    "toys": {
+      "toy1": {
+        "toyPicture": "../img/toys/cobraCommander/cobraCommander1.jpg",
+        "toyTitle": "Cobra Commander Resolute",
+        "toyInfo": "Wave 13 Action Figure 3 3/4 Inch Scale",
+        "toyPrice": 32.99,
+        "toyAmazon": "https://www.amazon.com/Hasbro-Action-Figure-Commander-Resolute/dp/B001MBNP4E/ref=sr_1_16?s=toys-and-games&ie=UTF8&qid=1528406630&sr=1-16&keywords=cobra+commander+gi+joe"
+      }
+    }
   },
   "destro":{
     "picture": "../img/cobra/destro.jpg",
@@ -65,7 +87,17 @@
     "primary": "Weapons Manufacturer",
     "secondary": "Terrorist",
     "current": "Classified",
-    "bio": " The Destro clan has designed and sold weapons for centuries, and Destro is the faceless power behind their current incarnation—M.A.R.S. (Military Armament Research Syndicate), a state-of-the-art weapons manufacturer and one of the largest multinational corporations in the world."
+    "bio": " The Destro clan has designed and sold weapons for centuries, and Destro is the faceless power behind their current incarnation—M.A.R.S. (Military Armament Research Syndicate), a state-of-the-art weapons manufacturer and one of the largest multinational corporations in the world.",
+    "hoverBio": "The Destro clan has designed and sold weapons for centuries.",
+    "toys": {
+      "toy1": {
+        "toyPicture": "../img/toys/destro/destro1.jpg",
+        "toyTitle": "Cartoon Series",
+        "toyInfo": "Iron Gredadiers",
+        "toyPrice": 14.97,
+        "toyAmazon": "https://www.amazon.com/Joe-Iron-Gredadiers-Destro-Cartoon/dp/B002KY4OYC/ref=sr_1_1?s=toys-and-games&ie=UTF8&qid=1528407405&sr=1-1&keywords=destro+gi+joe"
+      }
+    }
   }
 
 
